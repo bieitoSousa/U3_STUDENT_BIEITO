@@ -8,7 +8,7 @@ Añadir texto a {TextView}
 ### CheckBox {Limpiar}
 ### Boton {Añadir/Limpiar}
 CheckBox_{Limpiar} = true , limpia el texto
-CheckBox_{Limpiar} = false , sobre escribe el texto
+CheckBox_{Limpiar} = false , sobreescribe el texto
 ### RadioButtons
 Los RadioButtons permite cambiar el color {TextView}.
 
