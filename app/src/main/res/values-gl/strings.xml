@@ -1,23 +1,23 @@
 <resources>
-    <string name = "app_name"> U3_STUDENT_BIEITO </string>
-    <string name = "action_settings"> Configuración </string>
+<string name = "app_name"> U3_STUDENT_BIEITO </string>
     <!-- Cadenas utilizadas para fragmentos de navegación -->
-    <string name = "first_fragment_label"> Primer fragmento </string>
+    <string name = "first_fragment_label"> Primeiro fragmento </string>
     <string name = "second_fragment_label"> Segundo fragmento </string>
     <string name = "next"> Siguiente </string>
     <string name = "previous"> Anterior </string>
     <string name = "hello_first_fragment"> Hola, primer fragmento </string>
-    <string name = "hello_second_fragment"> Hola segundo fragmento. Arg:% 1 $ s </string>
+    <string name = "hello_second_fragment"> Ola segundo fragmento. Arg:% 1 $ s </string>
+    <string name = "action_settings"> Configuración </string>
     <string name = "text_clear"> Borrar </string>
-    <string name = "text_button"> Agregar / Borrar </string>
-    <string name = "text_label"> Aquí es donde verá el texto que escribe </string>
-    <string name = "text_hint"> Escribe un texto y presiona el botón </string>
-    <string name = "text_red"> Rojo </string>
+    <string name = "text_button"> Engadir / Borrar </string>
+    <string name = "text_label"> Aquí verás o texto que escribes </string>
+    <string name = "text_hint"> Escriba un texto e prema o botón </string>
+    <string name = "text_red"> Vermello </string>
     <string name = "text_blue"> Azul </string>
-    <string name = "text_start"> Iniciar </string>
-    <string name = "text_stop"> Detener </string>
-    <string name = "text_image"> Catedral de León - León </string>
-    <string name = "text_toast_gal"> Ha seleccionado una provincia gallega </string>
-    <string name = "text_toast_no_gal"> No ha seleccionado una provincia de Galicia </string>
-    <string name = "Imaxe"> Imagen </string>
+    <string name = "text_start"> Inicio </string>
+    <string name = "text_stop"> Deter </string>
+    <string name = "text_image"> Catedral León - León </string>
+    <string name = "text_toast_gal"> Seleccionaches unha provincia galega </string>
+    <string name = "text_toast_no_gal"> Non seleccionou unha provincia galega </string>
+    <string name = "Image"> Imaxe </string>
 </resources>
