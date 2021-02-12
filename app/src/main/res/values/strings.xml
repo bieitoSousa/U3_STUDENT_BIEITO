@@ -10,8 +10,8 @@
     <string name = "action_settings"> Settings </string>
     <string name = "text_clear"> Delete </string>
     <string name = "text_button"> Add / Delete </string>
-    <string name = "text_label"> This is where you will see the text you type </string>
-    <string name = "text_hint"> Type a text and press the </string> button
+    <string name = "text_label"> Here is where you will see the text that you type </string>
+    <string name = "text_hint"> Type a text and press the button </string> 
     <string name = "text_red"> Red </string>
     <string name = "text_blue"> Blue </string>
     <string name = "text_start"> Start </string>
