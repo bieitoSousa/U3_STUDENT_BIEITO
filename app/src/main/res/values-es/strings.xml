@@ -9,7 +9,7 @@
     <string name = "hello_second_fragment"> Hello second snippet. Arg:% 1 $ s </string>
     <string name = "action_settings"> Settings </string>
     <string name = "text_clear"> Delete </string>
-    <string name = "text_button"> Add / Delete </string>
+    <string name = "text_button"> Add / Clear </string>
     <string name = "text_label"> Here is where you will see the text that you type </string>
     <string name = "text_hint"> Type a text and press the button </string> 
     <string name = "text_red"> Red </string>
