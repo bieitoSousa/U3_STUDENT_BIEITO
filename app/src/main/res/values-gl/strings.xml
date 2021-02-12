@@ -1,6 +1,6 @@
 <resources>
 <string name = "app_name"> U3_STUDENT_BIEITO </string>
-    <! - Cadenas utilizadas para fragmentos de navegación ->
+    <!-- Cadenas utilizadas para fragmentos de navegación -->
     <string name = "first_fragment_label"> Primeiro fragmento </string>
     <string name = "second_fragment_label"> Segundo fragmento </string>
     <string name = "next"> Siguiente </string>
@@ -19,5 +19,5 @@
     <string name = "text_image"> Catedral León - León </string>
     <string name = "text_toast_gal"> Seleccionaches unha provincia galega </string>
     <string name = "text_toast_no_gal"> Non seleccionou unha provincia galega </string>
-    <string name = "Imaxe"> Imaxe </string> 
+    <string name = "Image"> Imaxe </string>
 </resources>
