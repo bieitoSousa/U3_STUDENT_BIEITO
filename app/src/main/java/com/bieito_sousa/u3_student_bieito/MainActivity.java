@@ -18,20 +18,19 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    final TextView textView = findViewById(R.id.text_view_id);
-    final CheckBox checkBox = findViewById(R.id.checkbox_id);
-    final EditText editText = findViewById(R.id.plain_text_input);
-    final RadioButton radioButton_red = findViewById(R.id.radio_red);
-    final RadioButton radioButton_blue = findViewById(R.id.radio_blue);
-    private static Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MainActivity.context = getApplicationContext();
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        final TextView textView = findViewById(R.id.text_view_id);
+        final CheckBox checkBox = findViewById(R.id.checkbox_id);
+        final EditText editText = findViewById(R.id.plain_text_input);
+        final RadioButton radioButton_red = findViewById(R.id.radio_red);
+        final RadioButton radioButton_blue = findViewById(R.id.radio_blue);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
         final Button button = findViewById(R.id.button_id);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -50,9 +50,16 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+
     }
 
     public void onRadioButtonClicked(View view) {
+        final TextView textView = findViewById(R.id.text_view_id);
+        final CheckBox checkBox = findViewById(R.id.checkbox_id);
+        final EditText editText = findViewById(R.id.plain_text_input);
+        final RadioButton radioButton_red = findViewById(R.id.radio_red);
+        final RadioButton radioButton_blue = findViewById(R.id.radio_blue);
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
 
@@ -60,13 +67,13 @@ public class MainActivity extends AppCompatActivity {
         switch(view.getId()) {
             case R.id.radio_red:
                 if (checked)
-                    this.radioButton_blue.setChecked(false);
-                    this.textView.setTextColor(ContextCompat.getColor(this,R.color.red));
+                    radioButton_blue.setChecked(false);
+                    textView.setTextColor(ContextCompat.getColor(this,R.color.red));
                     break;
             case R.id.radio_blue:
                 if (checked)
-                    this.radioButton_red.setChecked(false);
-                    this.textView.setTextColor(ContextCompat.getColor(this,R.color.blue));
+                    radioButton_red.setChecked(false);
+                    textView.setTextColor(ContextCompat.getColor(this,R.color.blue));
                     break;
         }
     }
