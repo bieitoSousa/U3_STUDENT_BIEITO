@@ -33,6 +33,7 @@
             android:layout_gravity="center"
             android:background="@drawable/bordes_redondos"
             android:text="@string/text_button"
+            android:onClick="onButtonClicked"
             android:textColor="@color/white" />
 
         <TextView

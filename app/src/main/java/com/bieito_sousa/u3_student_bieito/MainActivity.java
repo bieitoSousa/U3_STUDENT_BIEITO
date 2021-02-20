@@ -13,12 +13,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Chronometer;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    private Button button ;
+    private TextView textView ;
+    private CheckBox checkBox ;
+    private EditText editText ;
+    private RadioButton radioButton_red ;
+    private RadioButton radioButton_blue ;
+    private Spinner spinner_prv;
+    private Chronometer chronometer;
+    private Switch switch_Chr;
+    private int temp;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +40,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        final TextView textView = findViewById(R.id.text_view_id);
-        final CheckBox checkBox = findViewById(R.id.checkbox_id);
-        final EditText editText = findViewById(R.id.plain_text_input);
-        final RadioButton radioButton_red = findViewById(R.id.radio_red);
-        final RadioButton radioButton_blue = findViewById(R.id.radio_blue);
+        defValues();
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
+        /*
         final Button button = findViewById(R.id.button_id);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -50,19 +61,53 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        */
+
 
 
     }
+    /*
+    Define layaut values
+    */
+    protected void defValues(){
+        this.button = findViewById(R.id.button_id);
+        this.textView = findViewById(R.id.text_view_id);
+        this.checkBox = findViewById(R.id.checkbox_id);
+        this.editText = findViewById(R.id.plain_text_input);
+        this.radioButton_red = findViewById(R.id.radio_red);
+        this.radioButton_blue = findViewById(R.id.radio_blue);
+       /*
+        this.spinner_prv=findViewById(R.id.);
+        this.chronometer=findViewById(R.id.);
+        this.switch_Chr=findViewById(R.id.);
+        this.temp=findViewById(R.id.);
+        this.imageView=findViewById(R.id.);
+        */
+    }
 
+    /*
+     button actions :
+        checkBox is true ->  replace text with the text of editText
+        checkBox is false -> replace text with the text of ""
+     */
+
+    public void onButtonClicked(View view){
+        if(checkBox.isChecked()){
+            textView.setText("");
+        }else {
+            textView.setText(editText.getText());
+        }
+    }
+
+
+    /*
+     radio button actions :
+        button red checked -> put the text in red
+        button blue checked -> put the text in blue
+     */
     public void onRadioButtonClicked(View view) {
-        final TextView textView = findViewById(R.id.text_view_id);
-        final CheckBox checkBox = findViewById(R.id.checkbox_id);
-        final EditText editText = findViewById(R.id.plain_text_input);
-        final RadioButton radioButton_red = findViewById(R.id.radio_red);
-        final RadioButton radioButton_blue = findViewById(R.id.radio_blue);
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
-
         // Check which radio button was clicked
         switch(view.getId()) {
             case R.id.radio_red:
