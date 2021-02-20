@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity  {
         defValues();
         eventOperations();
     }
+
     /*
     Define layaut values
     */
@@ -65,29 +66,19 @@ public class MainActivity extends AppCompatActivity  {
         this.radioButton_red = findViewById(R.id.radio_red);
         this.radioButton_blue = findViewById(R.id.radio_blue);
         this.spinner_prv=findViewById(R.id.spinner_id);
+        createSpinnerAdapter();
         this.province_number = getResources().getStringArray(R.array.province_number);
         this.province_name = getResources().getStringArray(R.array.province_name);
         this.province_autonomy = getResources().getStringArray(R.array.province_autonomy);
-        createSpinnerAdapter();
-
         /*
         this.chronometer=findViewById(R.id.chronometer_id);
         this.switch_Chr=findViewById(R.id.switch_Chr_id);
         this.temp=findViewById(R.id.);
-        this.imageView=findViewById(R.id.imageView_id);
         */
     }
+
     /*
     [https://developer.android.com/guide/topics/ui/controls/spinner]
-    The createFromResource() method allows you to create an ArrayAdapter from the string array.
-    The third argument for this method is a layout resource that defines how the selected choice
-        appears in the spinner control. The simple_spinner_item layout is provided by the platform
-        and is the default layout you should use unless you'd like to define your
-        own layout for the spinner's appearance.
-    You should then call setDropDownViewResource(int) to specify the layout the adapter should use
-        to display the list of spinner choices (simple_spinner_dropdown_item
-        is another standard layout defined by the platform).
-    Call setAdapter() to apply the adapter to your Spinner.
      */
     protected void createSpinnerAdapter(){
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -102,6 +93,7 @@ public class MainActivity extends AppCompatActivity  {
 
     protected void eventOperations(){
         onSpinnerClicked();
+        onImageViewClicked();
     }
 
     /*
@@ -109,7 +101,6 @@ public class MainActivity extends AppCompatActivity  {
         checkBox is true ->  replace text with the text of editText
         checkBox is false -> replace text with the text of ""
      */
-
     public void onButtonClicked(View view){
         if(checkBox.isChecked()){
             textView.setText("");
@@ -117,7 +108,6 @@ public class MainActivity extends AppCompatActivity  {
             textView.setText(editText.getText());
         }
     }
-
 
     /*
      radio button actions :
@@ -150,17 +140,31 @@ public class MainActivity extends AppCompatActivity  {
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-
             }
         });
-
     }
+
     public void opSpinner(int pos, long id) {
         Log.i(TAG, "POS ["+pos + "] ID ["+ id+"]");
         if (this.province_autonomy[pos].contains("Galicia")) {
             Toast.makeText(getApplicationContext(), getString(R.string.text_toast_gal), Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(getApplicationContext(), getString(R.string.text_toast_no_gal),Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void onImageViewClicked(){
+        if (getRotation(this).contains("vertical")){
+            ImageView imageView = findViewById(R.id.imagenView_id);
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String texto = (String)imageView.getTag();
+                    Toast.makeText(getApplicationContext(), (String)imageView.getTag(), Toast.LENGTH_LONG).show();
+                }
+            });
+        }else if (getRotation(this).contains("horizontal")){
+
         }
     }
 
@@ -188,7 +192,6 @@ public class MainActivity extends AppCompatActivity  {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -199,7 +202,6 @@ public class MainActivity extends AppCompatActivity  {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
