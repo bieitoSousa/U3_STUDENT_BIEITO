@@ -65,14 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
-        <ImageView
-            android:id="@+id/imagenView_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/img_vigo"
-            android:contentDescription="@string/text_image"
-            android:tag="@string/text_image"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
