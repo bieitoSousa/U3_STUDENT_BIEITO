@@ -53,23 +53,6 @@ public class MainActivity extends AppCompatActivity  {
         setSupportActionBar(toolbar);
         defValues();
         eventOperations();
-
-
-        /*
-        final Button button = findViewById(R.id.button_id);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                if(checkBox.isChecked()){
-                    textView.setText("");
-                }else {
-                    textView.setText(editText.getText());
-                }
-            }
-        });
-        */
-
-
-
     }
     /*
     Define layaut values
