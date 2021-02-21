@@ -82,11 +82,19 @@
                 android:layout_gravity="center"
                 />
         </RadioGroup>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"/>
         <Spinner
             android:id="@+id/spinner_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"/>
         <ImageView
             android:id="@+id/imagenView_id"
             android:layout_width="wrap_content"
@@ -96,7 +104,10 @@
             android:contentDescription="@string/text_image"
             android:tag="@string/text_image"
             />
-
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray"/>
          <Chronometer
             android:id="@+id/chronometer_id"
             android:layout_width="wrap_content"

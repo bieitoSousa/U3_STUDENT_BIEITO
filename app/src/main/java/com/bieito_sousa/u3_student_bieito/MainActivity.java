@@ -56,6 +56,12 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     /*
+    Layout separador
+    [https://stackoverflow.com/questions/5049852/android-drawing-separator-divider-line-in-layout]
+     */
+
+
+    /*
     Define layaut values
     */
     protected void defValues(){
@@ -101,11 +107,27 @@ public class MainActivity extends AppCompatActivity  {
         checkBox is true ->  replace text with the text of editText
         checkBox is false -> replace text with the text of ""
      */
+    /*
+    Editable text to string
+    [https://stackoverflow.com/questions/2216201/editable-text-to-string]
+     */
+
     public void onButtonClicked(View view){
         if(checkBox.isChecked()){
             textView.setText("");
         }else {
-            textView.setText(editText.getText());
+            textView.setText(ucFirst((String) editText.getText().toString()));
+        }
+    }
+    /*
+        poner en mayúsculas el primer carácter de una cadena en Android
+        [https://es.stackoverflow.com/questions/10393/c%C3%B3mo-poner-en-may%C3%BAsculas-el-primer-car%C3%A1cter-de-una-cadena-en-android/10395]
+         */
+    public static String ucFirst(String str) {
+        if (str == null || str.isEmpty()) {
+            return "";
+        } else {
+            return str.substring(0, 1).toUpperCase() + str.substring(1);
         }
     }
 
@@ -150,7 +172,6 @@ public class MainActivity extends AppCompatActivity  {
     Toast
     [https://developer.android.com/guide/topics/ui/notifiers/toasts]
      */
-
 
     public void opSpinner(int pos, long id) {
        // Log.i(TAG, "POS ["+pos + "] ID ["+ id+"]");
