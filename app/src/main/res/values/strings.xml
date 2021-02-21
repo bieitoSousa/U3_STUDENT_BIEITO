@@ -1,12 +1,5 @@
 <resources>
 <string name = "app_name"> U3_STUDENT_BIEITO </string>
-    <!-- Strings used for navigation snippets -->
-    <string name = "first_fragment_label"> First fragment </string>
-    <string name = "second_fragment_label"> Second fragment </string>
-    <string name = "next"> Next </string>
-    <string name = "previous"> Previous </string>
-    <string name = "hello_first_fragment"> Hello, first fragment </string>
-    <string name = "hello_second_fragment"> Hello second snippet. Arg:% 1 $ s </string>
     <string name = "action_settings"> Settings </string>
     <string name = "text_clear"> Clear </string>
     <string name = "text_button"> Add / Clear </string>
@@ -16,7 +9,7 @@
     <string name = "text_blue"> Blue </string>
     <string name = "text_start"> Start </string>
     <string name = "text_stop"> Stop </string>
-    <string name = "text_image"> Cathedral of León - León </string>
+    <string name = "text_image"> Castrelos park, Vigo </string>
     <string name = "text_toast_gal"> You have selected a Galician province </string>
     <string name = "text_toast_no_gal"> You have not selected a province of Galicia </string>
     <string name = "Image"> Image </string>

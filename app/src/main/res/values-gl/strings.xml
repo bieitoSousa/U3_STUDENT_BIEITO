@@ -1,23 +1,16 @@
 <resources>
 <string name = "app_name"> U3_STUDENT_BIEITO </string>
-    <!-- Cadenas utilizadas para fragmentos de navegación -->
-    <string name = "first_fragment_label"> Primeiro fragmento </string>
-    <string name = "second_fragment_label"> Segundo fragmento </string>
-    <string name = "next"> Siguiente </string>
-    <string name = "previous"> Anterior </string>
-    <string name = "hello_first_fragment"> Hola, primer fragmento </string>
-    <string name = "hello_second_fragment"> Ola segundo fragmento. Arg:% 1 $ s </string>
     <string name = "action_settings"> Configuración </string>
-    <string name = "text_clear"> Borrar </string>
-    <string name = "text_button"> Engadir / Borrar </string>
-    <string name = "text_label"> Aquí verás o texto que escribes </string>
-    <string name = "text_hint"> Escriba un texto e prema o botón </string>
+    <string name = "text_clear"> Eliminar </string>
+    <string name = "text_button"> Engadir / Eliminar </string>
+    <string name = "text_label"> Aquí é onde verá o texto que escribe </string>
+    <string name = "text_hint"> Escribe un texto e preme o botón </string>
     <string name = "text_red"> Vermello </string>
     <string name = "text_blue"> Azul </string>
     <string name = "text_start"> Inicio </string>
     <string name = "text_stop"> Deter </string>
-    <string name = "text_image"> Catedral León - León </string>
+    <string name = "text_image"> Parque de Castrelos, Vigo </string>
     <string name = "text_toast_gal"> Seleccionaches unha provincia galega </string>
-    <string name = "text_toast_no_gal"> Non seleccionou unha provincia galega </string>
+    <string name = "text_toast_no_gal"> Non seleccionou unha provincia de Galicia </string>
     <string name = "Image"> Imaxe </string>
 </resources>

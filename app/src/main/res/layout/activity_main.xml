@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.U3_STUDENT_BIEITO.PopupOverlay" />
+            app:popupTheme="@style/Theme.U3_STUDENT_BIEITO.PopupOverlay" 
+            />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -31,14 +32,16 @@
             android:layout_height="wrap_content"
             android:background="@color/green"
             android:inputType="text"
-            android:text="@string/text_hint" />
+            android:text="@string/text_hint" 
+            />
 
         <CheckBox
             android:id="@+id/checkbox_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:text="@string/text_clear"/>
+            android:text="@string/text_clear"
+            />
 
         <Button
             android:id="@+id/button_id"
@@ -48,14 +51,16 @@
             android:background="@drawable/bordes_redondos"
             android:text="@string/text_button"
             android:onClick="onButtonClicked"
-            android:textColor="@color/white" />
+            android:textColor="@color/white" 
+            />
 
         <TextView
             android:id="@+id/text_view_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/text_label"
-            android:textColor="@color/red" />
+            android:textColor="@color/red"
+            />
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,14 +71,16 @@
                 android:text="@string/text_red"
                 android:onClick="onRadioButtonClicked"
                 android:layout_weight="1"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                />
             <RadioButton android:id="@+id/radio_blue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/text_blue"
                 android:onClick="onRadioButtonClicked"
                 android:layout_weight="1"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                />
         </RadioGroup>
         <Spinner
             android:id="@+id/spinner_id"
@@ -87,7 +94,26 @@
             android:layout_gravity="center"
             android:src="@drawable/img_vigo"
             android:contentDescription="@string/text_image"
-            android:tag="@string/text_image"/>
+            android:tag="@string/text_image"
+            />
+
+         <Chronometer
+            android:id="@+id/chronometer_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+
+        <Switch
+            android:id="@+id/switch_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:checked="false"
+            />
+
+
+
     </LinearLayout>
 
 

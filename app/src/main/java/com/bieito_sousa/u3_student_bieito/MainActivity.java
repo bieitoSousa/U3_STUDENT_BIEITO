@@ -2,6 +2,7 @@ package com.bieito_sousa.u3_student_bieito;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
@@ -11,7 +12,6 @@ import android.util.Log;
 import android.view.Display;
 import android.view.Surface;
 import android.view.View;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
@@ -70,11 +70,8 @@ public class MainActivity extends AppCompatActivity  {
         this.province_number = getResources().getStringArray(R.array.province_number);
         this.province_name = getResources().getStringArray(R.array.province_name);
         this.province_autonomy = getResources().getStringArray(R.array.province_autonomy);
-        /*
         this.chronometer=findViewById(R.id.chronometer_id);
-        this.switch_Chr=findViewById(R.id.switch_Chr_id);
-        this.temp=findViewById(R.id.);
-        */
+        this.switch_Chr=findViewById(R.id.switch_id);
     }
 
     /*
@@ -94,9 +91,12 @@ public class MainActivity extends AppCompatActivity  {
     protected void eventOperations(){
         onSpinnerClicked();
         onImageViewClicked();
+        chronometerOperations();
     }
 
     /*
+    Button
+    [https://developer.android.com/reference/android/widget/Button]
      button actions :
         checkBox is true ->  replace text with the text of editText
         checkBox is false -> replace text with the text of ""
@@ -122,16 +122,19 @@ public class MainActivity extends AppCompatActivity  {
             case R.id.radio_red:
                 if (checked)
                     radioButton_blue.setChecked(false);
-                    textView.setTextColor(ContextCompat.getColor(this,R.color.red));
+                    textView.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.red));
                     break;
             case R.id.radio_blue:
                 if (checked)
                     radioButton_red.setChecked(false);
-                    textView.setTextColor(ContextCompat.getColor(this,R.color.blue));
+                    textView.setTextColor(ContextCompat.getColor(getApplicationContext(),R.color.blue));
                     break;
         }
     }
-
+    /*
+    Spinner
+    [https://developer.android.com/reference/android/widget/Spinner]
+    */
     public void onSpinnerClicked() {
         spinner_prv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -143,9 +146,14 @@ public class MainActivity extends AppCompatActivity  {
             }
         });
     }
+    /*
+    Toast
+    [https://developer.android.com/guide/topics/ui/notifiers/toasts]
+     */
+
 
     public void opSpinner(int pos, long id) {
-        Log.i(TAG, "POS ["+pos + "] ID ["+ id+"]");
+       // Log.i(TAG, "POS ["+pos + "] ID ["+ id+"]");
         if (this.province_autonomy[pos].contains("Galicia")) {
             Toast.makeText(getApplicationContext(), getString(R.string.text_toast_gal), Toast.LENGTH_LONG).show();
         }else{
@@ -159,7 +167,6 @@ public class MainActivity extends AppCompatActivity  {
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String texto = (String)imageView.getTag();
                     Toast.makeText(getApplicationContext(), (String)imageView.getTag(), Toast.LENGTH_LONG).show();
                 }
             });
@@ -176,12 +183,12 @@ public class MainActivity extends AppCompatActivity  {
     [https://es.stackoverflow.com/questions/51511/c%C3%B3mo-detectar-la-orientacionhorizontal-o-vertical-en-android-de-la-pantalla-e]
      */
     public String getRotation(Context context){
-        final Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
-        switch (display.getRotation()) {
-            case 0:
-            case 180:
+        final int rotation = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getRotation();
+        switch (rotation) {
+            case Surface.ROTATION_0:
+            case Surface.ROTATION_180:
                 return "vertical";
-            case 90:
+            case Surface.ROTATION_90:
             default:
                 return "horizontal";
         }
@@ -194,14 +201,51 @@ public class MainActivity extends AppCompatActivity  {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (item.getItemId() == R.id.action_settings) {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    /*
+    Chronometer
+    [https://developer.android.com/reference/android/widget/Chronometer]
+        =   getOnChronometerTickListener   => Chronometer click Event  management
+        =   Chronometer.getBase            => Return the base time in milliseconds
+        =   chronometer.setBase            => Put the base time in milliseconds
+        =   chronometer.start()            => Start chronometer
+        =   chronometer.stop()             => Stop chronometer
+     Switch
+     [https://developer.android.com/reference/android/widget/Switch]
+     extend CompoundButton [https://developer.android.com/reference/android/widget/CompoundButton]
+        =   CompoundButton.isChecked() -> [true| false]
+     Time
+     [https://developer.android.com/reference/android/os/SystemClock]
+        =   SystemClock-                  = > system time management
+        =   SystemClock.elapsedRealtime() = > take system time in milliseconds
+        =   milliseconds to second        = > [ milliseconds/1000 = second ]
+
+    */
+     public void chronometerOperations(){
+        this.chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+            @Override
+            public void onChronometerTick(Chronometer chronometer_var) { //  when chronometer 15 seg
+                if (((int)(SystemClock.elapsedRealtime() - chronometer_var.getBase())/1000) == temp){
+                    finish(); // Activity destroy
+                }}
+        });
+        this.switch_Chr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (switch_Chr.isChecked()){// reload chronometer
+                    temp = 15; // chronometer timer 15 seg
+                    chronometer.setBase(SystemClock.elapsedRealtime());
+                    chronometer.start();
+                    Toast.makeText(getApplicationContext(), getString(R.string.text_start), Toast.LENGTH_LONG).show();
+                }else{ // stop chronometer
+                    chronometer.stop();
+                    Toast.makeText(getApplicationContext(), getString(R.string.text_stop), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 }

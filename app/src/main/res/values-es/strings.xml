@@ -1,23 +1,16 @@
 <resources>
 <string name = "app_name"> U3_STUDENT_BIEITO </string>
-    <!-- Strings used for navigation snippets -->
-    <string name = "first_fragment_label"> First fragment </string>
-    <string name = "second_fragment_label"> Second fragment </string>
-    <string name = "next"> Next </string>
-    <string name = "previous"> Previous </string>
-    <string name = "hello_first_fragment"> Hello, first fragment </string>
-    <string name = "hello_second_fragment"> Hello second snippet. Arg:% 1 $ s </string>
-    <string name = "action_settings"> Settings </string>
-    <string name = "text_clear"> Delete </string>
-    <string name = "text_button"> Add / Clear </string>
-    <string name = "text_label"> Here is where you will see the text that you type </string>
-    <string name = "text_hint"> Type a text and press the button </string> 
-    <string name = "text_red"> Red </string>
-    <string name = "text_blue"> Blue </string>
-    <string name = "text_start"> Start </string>
-    <string name = "text_stop"> Stop </string>
-    <string name = "text_image"> Cathedral of León - León </string>
-    <string name = "text_toast_gal"> You have selected a Galician province </string>
-    <string name = "text_toast_no_gal"> You have not selected a province of Galicia </string>
-    <string name = "Image"> Image </string> 
+    <string name = "action_settings"> Configuración </string>
+    <string name = "text_clear"> Eliminar </string>
+    <string name = "text_button"> Agregar / Borrar </string>
+    <string name = "text_label"> Aquí es donde verá el texto que escribe </string>
+    <string name = "text_hint"> Escriba un texto y presione el botón </string>
+    <string name = "text_red"> Rojo </string>
+    <string name = "text_blue"> Azul </string>
+    <string name = "text_start"> Iniciar </string>
+    <string name = "text_stop"> Detener </string>
+    <string name = "text_image"> Parque de Castrelos, Vigo </string>
+    <string name = "text_toast_gal"> Has seleccionado una provincia gallega </string>
+    <string name = "text_toast_no_gal"> No has seleccionado una provincia de Galicia </string>
+    <string name = "Image"> Imagen </string>
 </resources>
